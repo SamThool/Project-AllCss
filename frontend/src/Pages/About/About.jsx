@@ -1,5 +1,5 @@
 import React from "react";
-import CodeEditor from "../Layout/CodeEditor/CodeEditor";
+import CodeEditor from "../../Component/CodeEditor/CodeEditor";
 import "./about.css";
 
 const About = () => {

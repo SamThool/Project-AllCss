@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Editor from "./Editor";
 import "./codeEditor.css";
-import data from "../../../codes/codes.json";
+import data from "../../codes/codes.json";
 
 const CodeEditor = () => {
   const [htmlCode, setHtmlCode] = useState(data.html);
@@ -41,9 +41,18 @@ const CodeEditor = () => {
 `;
   return (
     <div className="CodeEditor">
-      <button onClick={showHTML}>HTML</button>
-      <button onClick={showCSS}>CSS</button>
-      <button onClick={showJS}>JS</button>
+      <div className="codeEditorBTN">
+        <button className="html-btn" onClick={showHTML}>
+          HTML
+        </button>
+        <button className="css-btn" onClick={showCSS}>
+          CSS
+        </button>
+        <button className="js-btn" onClick={showJS}>
+          JS
+        </button>
+        <button className="edit-btn">Edit</button>
+      </div>
       <div className="edits">
         <div id="html">
           <Editor code={htmlCode} onChange={setHtmlCode} />
@@ -54,7 +63,7 @@ const CodeEditor = () => {
         <div className="none" id="js">
           <Editor code={jsCode} onChange={setJsCode} />
         </div>
-        <iframe title="Preview" srcDoc={combinedCode} />
+        <iframe title="Preview" width={320} srcDoc={combinedCode} />
       </div>
     </div>
   );

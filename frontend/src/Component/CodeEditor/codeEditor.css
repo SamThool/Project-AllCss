@@ -1,0 +1,50 @@
+.CodeEditor {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid white;
+}
+.Editor {
+  height: 300px;
+  width: 320px;
+}
+.Editor > textarea {
+  height: 300px;
+  width: 320px;
+  resize: none;
+  border: none;
+  outline: none;
+  background: #23272e;
+  color: white;
+  padding: 10px 15px;
+}
+.CodeEditor > iframe {
+  background: white !important;
+}
+.none {
+  display: none;
+}
+.edits {
+  display: flex;
+  background: white;
+}
+.codeEditorBTN {
+  display: flex;
+  background: #1e2227;
+  gap: 15px;
+  padding: 2px 5px;
+}
+.codeEditorBTN > button {
+  width: 60px;
+  color: white;
+  background: #4f4f4f;
+  outline: none;
+  border: 1px solid #6f6f6f;
+  border-radius: 4px;
+}
+.codeEditorBTN > button:hover {
+  background-color: #6f6f6f;
+}
+.codeEditorBTN > button:last-child {
+  position: relative;
+  left: 21.7rem;
+}

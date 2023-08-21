@@ -8,8 +8,8 @@ const Editor = ({ code, onChange }) => {
       <textarea
         value={code}
         onChange={(e) => onChange(e.target.value)}
-        rows="10"
-        cols="30"
+        // rows="10"
+        // cols="30"
       />
     </div>
   );
