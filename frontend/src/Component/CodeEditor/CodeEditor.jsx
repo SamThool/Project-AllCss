@@ -2,9 +2,13 @@ import React, { useState } from "react";
 import Editor from "./Editor";
 import "./codeEditor.css";
 import data from "../../codes/codes.json";
+import prettier from "prettier/standalone";
+import parserHtml from "prettier/parser-html";
 
 const CodeEditor = () => {
-  const [htmlCode, setHtmlCode] = useState(data.html);
+  const [htmlCode, setHtmlCode] = useState(
+    ` <div class = "toggle-switch"> <ul><li> hbsdfjhb</li><li> hbsdfjhb</li><li> hbsdfjhb</li><li> hbsdfjhb</li> </ul> </div>`
+  );
   const [cssCode, setCssCode] = useState(data.css);
   const [jsCode, setJsCode] = useState(data.js);
 
@@ -27,18 +31,24 @@ const CodeEditor = () => {
   const combinedCode = `
   <html>
   <head>
-    <style>
-      ${cssCode}
-    </style>
+  <style>
+  ${cssCode}
+  </style>
   </head>
   <body>
-    ${htmlCode}
-    <script>
-      ${jsCode}
-    </script>
+  ${htmlCode}
+  <script>
+  ${jsCode}
+  </script>
   </body>
   </html>
-`;
+  `;
+
+  // const formattedCode = prettier.format(combinedCode, {
+  //   parser: "html",
+  //   plugins: [parserHtml],
+  // });
+
   return (
     <div className="CodeEditor">
       <div className="codeEditorBTN">
@@ -58,10 +68,10 @@ const CodeEditor = () => {
           <Editor code={htmlCode} onChange={setHtmlCode} />
         </div>
         <div className="none" id="css">
-          <Editor code={cssCode} onChange={setCssCode} />
+          {/* <Editor code={cssCode} onChange={setCssCode} /> */}
         </div>
         <div className="none" id="js">
-          <Editor code={jsCode} onChange={setJsCode} />
+          {/* <Editor code={jsCode} onChange={setJsCode} /> */}
         </div>
         <iframe title="Preview" width={320} srcDoc={combinedCode} />
       </div>
