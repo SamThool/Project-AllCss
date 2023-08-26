@@ -1,4 +1,4 @@
-.CodeEditor {
+/* .CodeEditor {
   display: flex;
   flex-direction: column;
   border: 1px solid white;
@@ -47,4 +47,4 @@
 .codeEditorBTN > button:last-child {
   position: relative;
   left: 21.7rem;
-}
+} */
